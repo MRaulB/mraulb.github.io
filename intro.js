@@ -47,9 +47,8 @@ summaryElement.style.color="color"
  function showSkills() {
     var skills = ['html', 'css', 'js'];
     console.warn('showSkills', skills);
-    for(var i = 0; i < skills.length; i++) {
-        printSkills(skills[i], i);
-    }
+    skills.forEach(printSkills);
+    
     function printSkills(skills,index){
         console.info('#' + (index + 1 ) + '' + skills);
     }
