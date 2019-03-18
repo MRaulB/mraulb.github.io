@@ -47,12 +47,9 @@ summaryElement.style.color="color"
  function showSkills() {
     var skills = ['html', 'css', 'js'];
     console.warn('showSkills', skills);
-    skills.forEach(printSkills);
-    
-    function printSkills(skills,index){
-        console.info('#' + (index + 1 ) + '' + skills);
-    }
-     
+    skills.forEach(Function(skills, index) {
+        console.info('#' + (index + 1 ) + '' + skills)
+    });     
 }
 
 showSkills();
