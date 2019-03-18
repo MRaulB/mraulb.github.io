@@ -12,7 +12,7 @@ console.info("summaryElement", summaryElement)
 var color="red";
 summaryElement.style.color="color"
 
-function hidePage(page) {
+ function hidePage(page) {
     var el = document.getElementById(page);
     el.style.display= "none";
  }
@@ -43,3 +43,17 @@ function hidePage(page) {
      }
  }
  initMenu();
+ 
+ function showSkills() {
+    var skills = ['html', 'css', 'js'];
+    console.warn('showSkills', skills);
+    for(var i = 0; i < skills.length; i++) {
+        printSkills(skills[i], i);
+    }
+    function printSkills(skills,index){
+        console.info('#' + (index + 1 ) + '' + skills);
+    }
+     
+}
+
+showSkills();
