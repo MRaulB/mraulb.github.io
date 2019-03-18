@@ -45,11 +45,15 @@ summaryElement.style.color="color"
  initMenu();
  
  function showSkills() {
-    var skills = ['html', 'css', 'js'];
-    console.warn('showSkills', skills);
-    skills.forEach(Function(skills, index) {
-        console.info('#' + (index + 1 ) + '' + skills)
-    });     
+    var skills = ['html', 'css', 'js',];
+    
+    var htmlSkills = skills.map(function(skill, index) {
+        return '<li>' + skill.toUpperCase() + '</li>';
+    });
+       
+       var ul = document.querySelector('#skills-page ul');
+      ul.innerHTML = htmlSkills.join('');
+       
 }
 
 showSkills();
