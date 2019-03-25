@@ -45,15 +45,19 @@ summaryElement.style.color="color"
  initMenu();
  
  function showSkills() {
-    var skills = ['html', 'css', 'js',];
+     var allEndorsements = [8,12,19,3];
+     var skills = ['html', 'css', 'javascript', 'nodeJS'];
     
-    var htmlSkills = skills.map(function(skill, index) {
-        return '<li>' + skill.toUpperCase() + '</li>';
+     var htmlSkills = skills.map(function(skill, index) {
+         var endorsements =' <span class="endorsement">(' + allEndorsements[index] + ")</span>";
+        return '<li>' + skill.toUpperCase() + endorsements + '</li>';
     });
        
-       var ul = document.querySelector('#skills-page ul');
+     var ul = document.querySelector('#skills-page ul');
       ul.innerHTML = htmlSkills.join('');
        
 }
+hideAllPages();
+showPage('skills-page');
+ showSkills();
 
-showSkills();
