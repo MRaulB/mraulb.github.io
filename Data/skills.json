@@ -1,0 +1,6 @@
+[
+   {"name": "html", "endorsements": 8, "endorsedBy": "Andrei I" },
+   {"name": "css", "endorsements": 12 }, 
+   {"name": "javascript", "endorsements": 21, "endorsedBy": "Nicu A." },
+   {"name": "nodejs", "endorsements": 3 }
+]

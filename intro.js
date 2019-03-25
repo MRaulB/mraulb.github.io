@@ -34,14 +34,8 @@ function hideAllPages() {
 }
 initMenu();
 
-function showSkills() {
-    var skills = [
-        { name: 'html', endorsements: 8, endorsedBy: 'Andrei I' },
-        { name: 'css', endorsements: 12 }, 
-        { name: 'javascript', endorsements: 20, endorsedBy: 'Nicu A.' },
-        { name: 'nodejs', endorsements: 3 }
-    ];
-    skills.sort(function(a, b){
+function showSkills(skills) {
+    skills.sort(function (a, b) {
         return b.endorsements - a.endorsements;
     });
 
@@ -57,5 +51,12 @@ function showSkills() {
 }
 hideAllPages();
 showPage('skills-page');
-showSkills();
+
+fetch('Data/skills.json')
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (myJson) {
+        showSkills(myJson);
+    });
 
