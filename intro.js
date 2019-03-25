@@ -1,14 +1,4 @@
-function getWelcomeMSG() {
-    console.log("inside welcome message");
-    return "Welcome to my site";
-}
-console.log("after welcome message");
-
-var welcome=getWelcomeMSG();
-console.info(welcome);
-
 var summaryElement = document.getElementById("summary")
-console.info("summaryElement", summaryElement)
 var color="red";
 summaryElement.style.color="color"
 
@@ -46,14 +36,21 @@ summaryElement.style.color="color"
  
  function showSkills() {
      var skills = [
-         {name: 'html', endorsements: 8},
+         {name: 'html', endorsements: 8, endorsedBy: 'Andrei I'},
          {name: 'css', endorsements: 12},
-         {name: 'javascript', endorsements: 20},
+         {name: 'javascript', endorsements: 20, endorsedBy: 'Nicu A.'},
          {name: 'nodejs', endorsements: 3}
         ];
 
-     var htmlSkills = skills.map(function(skill, index) {
-         var endorsements =' <span class="endorsement">(' + skill.endorsements + ")</span>";
+     var htmlSkills = skills.map(function(skill) {
+         var endorsedBy = skill.endorsedBy ? ` - ` + skill.endorsedBy : '';
+        // var endorsedBy = skill.endorsedBy;
+        // if (endorsedBy) {
+        //    endorsedBy = ' - ' + endorsedBy;
+        // } else {
+        //     endorsedBy = '';
+        //}
+         var endorsements =`<span class="endorsement">(${skill.endorsements})${endorsedBy})</span>`;
         return '<li>' + skill.name.toUpperCase() + endorsements + '</li>';
     });
        
